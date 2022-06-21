@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#script that count words and white spaces
+
+echo "Enter a word"
+
+read text
+word=$(echo -n "$text" | wc -w)
+char=$(echo -n "$text" | wc -c)
+
+space=$(expr length "$text" - length `echo "$text" | sed "s/ //g"`)
+
+echo " The number of words is $word"
+echo " The number of white spaces is $space"
