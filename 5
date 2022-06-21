@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#This Script that takes a path and confirms if it is a directory or not
+echo "Enter directory path"
+read DIR
+i=0
+while [ $i -eq 0 ]
+do
+  if [ -d "$DIR" ]; then
+	ls -la "$DIR"
+	((i++))
+  else
+	echo "Enter correct directory path"
+	read DIR
+  fi 
+done

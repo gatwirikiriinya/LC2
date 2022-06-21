@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script personalizes each message with the receipients name 
+while read -r line; do
+	content=$(sed 's/sub/'"$line"'/' message_template)
+	echo "$content" > "$line".txt
+done <member_names>
